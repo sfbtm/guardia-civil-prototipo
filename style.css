@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root{
+  --color-primario: #0000ff;
+  --color-secundario: #ff6600;
+  --color-terciario: #ffffff;
+  --color-texto: #2b2a29;
+  --fuente-principal: 'Roboto';
+  --fuente-secundaria: 'Open Sans';
+}
+
+.contenedor{
+  margin: 0 auto;
+}
+
+.logo{
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px;
+  box-shadow: 1px 1px 10px rgb(184, 183, 183);
+}
+
+.logo__img{
+  width: 50px;
+  height: 50px;
+  background-attachment: initial;
+}
+
+.logo__titulo{
+  font-family: var(--fuente-principal);
+  font-weight: bold;
+  text-transform: uppercase;
+  color: var(--color-primario);
+}
+
+.salir{
+  font-size: 24px;
+  color: var(--color-texto);
+}
+
+
