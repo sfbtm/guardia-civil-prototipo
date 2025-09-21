@@ -11,157 +11,219 @@
 </head>
 
 <body>
-  <div class="contenedor">
+  <header>
+    <div class="logo">
+      <img src="assets/logo.jpeg" alt="logo" class="logo__img">
+      <h3 class="logo__titulo">Plan familiar de emergencia</h3>
+      <a href="#" class="menu"><i class="fa-solid fa-bars"></i></a>
+    </div>
+  </header>
 
-    <head>
-      <div class="logo">
-        <img src="assets/logo.jpeg" alt="logo" class="logo__img">
-        <h3 class="logo__titulo">Plan familiar de emergencia</h3>
-        <a href="#" class="salir"><i class="fa-solid fa-right-from-bracket"></i></a>
+  <main>
+    <div class="container">
+      <h2 class="container__titulo">Test de vulnerabilidad familiar</h2>
+      <div class="instruciones">
+        <p class="instruciones__texto">Responda las siguientes preguntas según su apreciación haciendo click en SI o NO</p>
       </div>
-    </head>
-
-    <body>
-      <div class="CardInformacion">
-        <h2 class="CardInformacion__titulo">Test de vulnerabilidad familiar</h2>
-      </div>
-    </body>
-    <footer>
-      <form action="">
+      <form class="form">
+        <div class="form__indice">
+          <span class="form__indice_pregunta">N°</span>
+          <span class="form__indice_pregunta">PREGUNTA</span>
+          <span class="form__indice_pregunta">SI</span>
+          <span class="form__indice_pregunta">NO</span>
+        </div>
         <div class="form__item">
-          <label for="Pregunta" class="form__pregunta">
+          <span class="form__numero">01</span>
+          <label class="form__pregunta">
             ¿Su vivienda presenta daños estructurales (tejas, lámparas, cuadros, paredes, marcos, etc.) que puedan
             desprenderse y caer en caso de temblor, sismo o desastre?
           </label>
-          <input type="radio" value="si" id="form__input-si">
-          <label for="form__input-si" class="answer-option">SÍ</label>
-          <input type="radio" value="no" id="form__input-no">
-          <label for="form__input-no" class="answer-option">NO</label>
+          <div class="form__opciones">
+            <input type="radio" name="pregunta1" class="form__opcion-input" placeholder="SI">
+            <label for="pregunta1-si"class="form__opcion-label form__opcion-label--si">SI</label>
+            <input type="radio" name="pregunta1" class="form__opcion-input" placeholder="NO">
+            <label for="pregunta1-no" class="form__opcion-label form__opcion-label--no">NO</label>
+          </div>
         </div>
         <div class="form__item">
-          <label for="Pregunta" class="form__pregunta">
-            ¿Presenta su vivienda daños estructurales visibles, como grietas en muros, humedad excesiva en paredes incluyendo su deterioro?
+          <span class="form__numero">02</span>
+          <label class="form__pregunta">
+            ¿Presenta su vivienda daños estructurales visibles, como grietas en muros o vigas, humedad excesiva o paredes inclinadas o deterioradas?
           </label>
-          <input type="radio" value="si" id="form__input-si">
-          <label for="form__input-si" class="answer-option">SÍ</label>
-          <input type="radio" value="no" id="form__input-no">
-          <label for="form__input-no" class="answer-option">NO</label>
+          <div class="form__opciones">
+            <input type="radio" name="pregunta2" class="form__opcion-input">
+            <label for="pregunta2-si" class="form__opcion-label form__opcion-label--si">SI</label>
+            <input type="radio" name="pregunta2" class="form__opcion-input">
+            <label for="pregunta2-no" class="form__opcion-label form__opcion-label--no">NO</label>
+          </div>
         </div>
         <div class="form__item">
-          <label for="Pregunta" class="form__pregunta">
-            ¿Los cimientos, grietas, fisuras o desniveles peligrosos?
+          <span class="form__numero">03</span>
+          <label class="form__pregunta">
+            ¿Los pisos de su vivienda presentan signos de deterioro, como hundimientos, grietas, fisuras o desniveles peligrosos?
           </label>
-          <input type="radio" value="si" id="form__input-si">
-          <label for="form__input-si" class="answer-option">SÍ</label>
-          <input type="radio" value="no" id="form__input-no">
-          <label for="form__input-no" class="answer-option">NO</label>
+          <div class="form__opciones">
+            <input type="radio" name="pregunta3" class="form__opcion-input">
+            <label for="pregunta3-si" class="form__opcion-label form__opcion-label--si">SI</label>
+            <input type="radio" name="pregunta3" class="form__opcion-input">
+            <label for="pregunta3-no" class="form__opcion-label form__opcion-label--no">NO</label>
+          </div>
         </div>
         <div class="form__item">
-          <label for="Pregunta" class="form__pregunta">
-            ¿El lote de su vivienda presenta filtración, hundimiento, determinación por suelo o su estructura se ve debilitada?
+          <span class="form__numero">04</span>
+          <label class="form__pregunta">
+            ¿El techo de su vivienda presenta filtraciones, inestabilidad, deformaciones, está suelto o su estructura se ve debilitada?
           </label>
-          <input type="radio" value="si" id="form__input-si">
-          <label for="form__input-si" class="answer-option">SÍ</label>
-          <input type="radio" value="no" id="form__input-no">
-          <label for="form__input-no" class="answer-option">NO</label>
+          <div class="form__opciones">
+            <input type="radio" name="pregunta4" class="form__opcion-input">
+            <label for="pregunta4-si" class="form__opcion-label form__opcion-label--si">SI</label>
+            <input type="radio" name="pregunta4" class="form__opcion-input">
+            <label for="pregunta4-no" class="form__opcion-label form__opcion-label--no">NO</label>
+          </div>
         </div>
         <div class="form__item">
-          <label for="Pregunta" class="form__pregunta">
-            ¿Los alrededores del lote de su vivienda existen soportes, torres de alta tensión que representen peligro o contaminación de agua?
+          <span class="form__numero">05</span>
+          <label class="form__pregunta">
+            ¿Las canales y bajantes del techo de su vivienda, tiene soportes sueltos, se encuentran bloqueadas, presentan filtraciones o acumulación de agua?
           </label>
-          <input type="radio" value="si" id="form__input-si">
-          <label for="form__input-si" class="answer-option">SÍ</label>
-          <input type="radio" value="no" id="form__input-no">
-          <label for="form__input-no" class="answer-option">NO</label>
+          <div class="form__opciones">
+            <input type="radio" name="pregunta5" class="form__opcion-input">
+            <label for="pregunta5-si" class="form__opcion-label form__opcion-label--si">SI</label>
+            <input type="radio" name="pregunta5" class="form__opcion-input">
+            <label for="pregunta5-no" class="form__opcion-label form__opcion-label--no">NO</label>
+          </div>
         </div>
         <div class="form__item">
-          <label for="Pregunta" class="form__pregunta">
-            ¿Existen conexiones eléctricas en mal estado, cables expuestos o instalaciones eléctricas improvisadas sin medidas correctas?
+          <span class="form__numero">06</span>
+          <label class="form__pregunta">
+            ¿Existen conexiones eléctricas en mal estado, cables expuestos o instalaciones eléctricas improvisadas que puedan generar cortocircuitos?
           </label>
-          <input type="radio" value="si" id="form__input-si">
-          <label for="form__input-si" class="answer-option">SÍ</label>
-          <input type="radio" value="no" id="form__input-no">
-          <label for="form__input-no" class="answer-option">NO</label>
-        </div>
+          <div class="form__opciones">
+            <input type="radio" name="pregunta6" class="form__opcion-input">
+            <label for="pregunta6-si" class="form__opcion-label form__opcion-label--si">SI</label>
+            <input type="radio" name="pregunta6" class="form__opcion-input">
+            <label for="pregunta6-no" class="form__opcion-label form__opcion-label--no">NO</label>
+          </div>
         </div>
         <div class="form__item">
-          <label for="Pregunta" class="form__pregunta">
+          <span class="form__numero">07</span>
+          <label class="form__pregunta">
             ¿Existen muebles, estanterías, repisas o elementos mal fijados que puedan caer y causar accidentes?
           </label>
-          <input type="radio" value="si" id="form__input-si">
-          <label for="form__input-si" class="answer-option">SÍ</label>
-          <input type="radio" value="no" id="form__input-no">
-          <label for="form__input-no" class="answer-option">NO</label>
+          <div class="form__opciones">
+            <input type="radio" name="pregunta7" class="form__opcion-input">
+            <label for="pregunta7-si" class="form__opcion-label form__opcion-label--si">SI</label>
+            <input type="radio" name="pregunta7" class="form__opcion-input">
+            <label for="pregunta7-no" class="form__opcion-label form__opcion-label--no">NO</label>
+          </div>
         </div>
         <div class="form__item">
-          <label for="Pregunta" class="form__pregunta">
+          <span class="form__numero">08</span>
+          <label class="form__pregunta">
             ¿Hay ventanas, puertas, marquesinas u otras estructuras con vidrio que, puedan desprenderse y caer en caso deterioro, mal aseguramiento, sismo, vendaval o vibración excesiva?
           </label>
-          <input type="radio" value="si" id="form__input-si">
-          <label for="form__input-si" class="answer-option">SÍ</label>
-          <input type="radio" value="no" id="form__input-no">
-          <label for="form__input-no" class="answer-option">NO</label>
+          <div class="form__opciones">
+            <input type="radio" name="pregunta8" class="form__opcion-input">
+            <label for="pregunta8-si" class="form__opcion-label form__opcion-label--si">SI</label>
+            <input type="radio" name="pregunta8" class="form__opcion-input">
+            <label for="pregunta8-no" class="form__opcion-label form__opcion-label--no">NO</label>
+          </div>
         </div>
         <div class="form__item">
-          <label for="Pregunta" class="form__pregunta">
-            ¿Hay en su casa escaleras sin barandas o sin estabilidad o sin soportes, que puedan ocasionar caídas?
+          <span class="form__numero">09</span>
+          <label class="form__pregunta">
+            ¿Hay en su vivienda escaleras sin barandas o sin estabilidad o sin soportes, que puedan presentar riesgo de caída?
           </label>
-          <input type="radio" value="si" id="form__input-si">
-          <label for="form__input-si" class="answer-option">SÍ</label>
-          <input type="radio" value="no" id="form__input-no">
-          <label for="form__input-no" class="answer-option">NO</label>
+          <div class="form__opciones">
+            <input type="radio" name="pregunta9" class="form__opcion-input">
+            <label for="pregunta9-si" class="form__opcion-label form__opcion-label--si">SI</label>
+            <input type="radio" name="pregunta9" class="form__opcion-input">
+            <label for="pregunta9-no" class="form__opcion-label form__opcion-label--no">NO</label>
+          </div>
         </div>
         <div class="form__item">
-          <label for="Pregunta" class="form__pregunta">
-            ¿Se desarrolla alguna obra o construcción en inmediaciones de su casa, que pueda afectar de alguna manera en su vivienda?
+          <span class="form__numero">10</span>
+          <label class="form__pregunta">
+            ¿Están realizando actualmente modificaciones estructurales, locativas o decorativas en su vivienda?
           </label>
-          <input type="radio" value="si" id="form__input-si">
-          <label for="form__input-si" class="answer-option">SÍ</label>
-          <input type="radio" value="no" id="form__input-no">
-          <label for="form__input-no" class="answer-option">NO</label>
+          <div class="form__opciones">
+            <input type="radio" name="pregunta10" class="form__opcion-input">
+            <label for="pregunta10-si" class="form__opcion-label form__opcion-label--si">SI</label>
+            <input type="radio" name="pregunta10" class="form__opcion-input">
+            <label for="pregunta10-no" class="form__opcion-label form__opcion-label--no">NO</label>
+          </div>
         </div>
         <div class="form__item">
-          <label for="Pregunta" class="form__pregunta">
-            ¿Hay alguna construcción, muro, poste de luz y acceso a las placas o vigas, para evitar que se caigan o dañen la estructura en caso de sismo, vendaval o vibración excesiva?
+          <span class="form__numero">11</span>
+          <label class="form__pregunta">
+            ¿Se desarrolla alguna obra o construcción en inmediaciones de su casa, que puedan afectar de alguna manera su vivienda?
           </label>
-          <input type="radio" value="si" id="form__input-si">
-          <label for="form__input-si" class="answer-option">SÍ</label>
-          <input type="radio" value="no" id="form__input-no">
-          <label for="form__input-no" class="answer-option">NO</label>
+          <div class="form__opciones">
+            <input type="radio" name="pregunta11" class="form__opcion-input">
+            <label for="pregunta11-si" class="form__opcion-label form__opcion-label--si">SI</label>
+            <input type="radio" name="pregunta11" class="form__opcion-input">
+            <label for="pregunta11-no" class="form__opcion-label form__opcion-label--no">NO</label>
+          </div>
         </div>
         <div class="form__item">
-          <label for="Pregunta" class="form__pregunta">
-            ¿Su vivienda cuenta con un botiquín, extintor, maletín familiar o elementos básicos almacenados para emergencias?
+          <span class="form__numero">12</span>
+          <label class="form__pregunta">
+            ¿El tanque de agua u otros elementos pesados carecen de amarres o anclajes a las placas o vigas, para evitar que se caigan o dañen la estructura en caso de sismo, vendaval o vibración excesiva?
           </label>
-          <input type="radio" value="si" id="form__input-si">
-          <label for="form__input-si" class="answer-option">SÍ</label>
-          <input type="radio" value="no" id="form__input-no">
-          <label for="form__input-no" class="answer-option">NO</label>
+          <div class="form__opciones">
+            <input type="radio" name="pregunta12" class="form__opcion-input">
+            <label for="pregunta12-si" class="form__opcion-label form__opcion-label--si">SI</label>
+            <input type="radio" name="pregunta12" class="form__opcion-input">
+            <label for="pregunta12-no" class="form__opcion-label form__opcion-label--no">NO</label>
+          </div>
         </div>
         <div class="form__item">
-          <label for="Pregunta" class="form__pregunta">
-            ¿Los miembros de la familia conocen los números telefónicos de agua, gas o los interruptores de luz y saben cómo cortarlos?
+          <span class="form__numero">13</span>
+          <label class="form__pregunta">
+            ¿Su vivienda cuenta con un botiquín, extintor, maletín familiar o elementos para atender una emergencia?
           </label>
-          <input type="radio" value="si" id="form__input-si">
-          <label for="form__input-si" class="answer-option">SÍ</label>
-          <input type="radio" value="no" id="form__input-no">
-          <label for="form__input-no" class="answer-option">NO</label>
+          <div class="form__opciones">
+            <input type="radio" name="pregunta13" class="form__opcion-input">
+            <label for="pregunta13-si" class="form__opcion-label form__opcion-label--si">SI</label>
+            <input type="radio" name="pregunta13" class="form__opcion-input">
+            <label for="pregunta13-no" class="form__opcion-label form__opcion-label--no">NO</label>
+          </div>
         </div>
         <div class="form__item">
-          <label for="Pregunta" class="form__pregunta">
-            ¿Los miembros de la familia conocen los números principales, saben a quién llamar en caso de un accidente, emergencia o situación de desastre (Bomberos, Policía, Defensa Civil, Cruz Roja, etc.)?
+          <span class="form__numero">14</span>
+          <label class="form__pregunta">
+            ¿Los integrantes de la familia saben dónde están ubicados los registros de agua, gas e los interruptores de luz y saben cómo cerrarlos?
           </label>
-          <input type="radio" value="si" id="form__input-si">
-          <label for="form__input-si" class="answer-option">SÍ</label>
-          <input type="radio" value="no" id="form__input-no">
-          <label for="form__input-no" class="answer-option">NO</label>
+          <div class="form__opciones">
+            <input type="radio" name="pregunta14" class="form__opcion-input">
+            <label for="pregunta14-si" class="form__opcion-label form__opcion-label--si">SI</label>
+            <input type="radio" name="pregunta14" class="form__opcion-input">
+            <label for="pregunta14-no" class="form__opcion-label form__opcion-label--no">NO</label>
+          </div>
         </div>
-        <div class="button">
-          <button type="submit">Evaluar vulnerabilidad</button>
+        <div class="form__item form__item--sinborde">
+          <span class="form__numero">15</span>
+          <label class="form__pregunta">
+            ¿Los integrantes de la familia conocen los números de emergencia y saben a quién llamar en caso de un accidente, emergencia o situación de desastre (Bomberos, Policía, Defensa Civil, Cruz Roja, etc.)?
+          </label>
+          <div class="form__opciones">
+            <input type="radio" name="pregunta15" class="form__opcion-input">
+            <label for="pregunta15-si" class="form__opcion-label form__opcion-label--si">SI</label>
+            <input type="radio" name="pregunta15" class="form__opcion-input">
+            <label for="pregunta15-no" class="form__opcion-label form__opcion-label--no">NO</label>
+          </div>
         </div>
       </form>
-    </footer>
-  </div>
+      <div class="informacionfinal">
+        <p class="informacionfinal__texto">Si existen al menos cinco respuestas son afirmativas (SI), entre las preguntas 1 a 12, el hogar se considerará como vulnerable</p>
+      </div>
+      <button class="btn">Familia Vulnerable</button>
+    </div>
+  </main>
+
+  <footer>
+    
+  </footer>
 </body>
 
 </html>

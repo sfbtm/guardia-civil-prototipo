@@ -11,12 +11,19 @@
   --color-secundario: #ff6600;
   --color-terciario: #ffffff;
   --color-texto: #2b2a29;
-  --fuente-principal: 'Roboto';
-  --fuente-secundaria: 'Open Sans';
+  --color-borde: rgba(43, 42, 41, 46%);
+  --color-placeholder: rgba(43, 42, 41, 70%);
+  --fuente-titulos: 'Roboto';
+  --fuente-contenido: 'Open Sans';
+  --margin-seccion: 15px;
 }
 
-.contenedor{
-  margin: 0 auto;
+body{
+  background-color: var(--color-secundario);
+}
+
+header{
+  background-color: var(--color-terciario);
 }
 
 .logo{
@@ -35,15 +42,143 @@
 }
 
 .logo__titulo{
-  font-family: var(--fuente-principal);
+  font-family: var(--fuente-titulos);
   font-weight: bold;
   text-transform: uppercase;
   color: var(--color-primario);
+  font-size: 20px;
 }
 
-.salir{
+.menu{
   font-size: 24px;
   color: var(--color-texto);
 }
 
+.container{
+  background-color: var(--color-terciario);
+  border-radius: 40px;
+  padding: 15px;
+  margin: 20px auto;
+  width: 92%;
+}
 
+.container__titulo{
+  font-family: var(--fuente-titulos);
+  font-weight: bold;
+  text-transform: uppercase;
+  color: var(--color-texto);
+  font-size: 16px;
+  margin-top: var(--margin-seccion);
+  text-align: center;
+}
+
+.instruciones{
+  background-color: var(--color-primario);
+  padding: 12px 5px;
+  border-radius: 10px;
+  font-family: var(--fuente-titulos);
+  font-weight: bold;
+  color: var(--color-terciario);
+  text-align: center;
+  margin-top: var(--margin-seccion);
+}
+
+.form{
+  margin-top: var(--margin-seccion);
+  border: 1px solid var(--color-borde);
+  border-radius: 40px;
+}
+
+.form__indice{
+  display: grid;
+  grid-template-columns: 1fr 6fr 1fr 1fr;
+  font-family: var(--fuente-titulos);
+  background-color: var(--color-primario);
+  border-radius: 40px 40px 0px 0px;
+  padding: 15px;
+}
+
+.form__indice_pregunta{
+  color: var(--color-terciario);
+  font-weight: bold;
+  text-align: center;
+}
+
+.form__item{
+  display: grid;
+  grid-template-columns: 30px 6fr 2fr;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid var(--color-borde);
+}
+
+.form__item--sinborde{
+  border-bottom: none;
+}
+
+.form__numero{
+  font-family: var(--fuente-titulos);
+  background-color: var(--color-primario);
+  border-radius: 50%;
+  padding: 8px;
+  font-weight: bold;
+  color: var(--color-terciario);
+  text-align: center;
+  font-size: 14px;
+}
+
+.form__pregunta{
+  font-family: var(--fuente-contenido);
+  font-size: 14px;
+  padding: 10px;
+}
+
+.form__opciones{
+  display: flex;
+  flex-direction: row;
+  gap : 10px;
+  justify-content: center;
+}
+
+/* escondemos el radio real y luego con un label simulamos el boton, al final con una pseudoclase lo activamos */
+.form__opcion-input{
+  display: none;
+}
+
+.form__opcion-label{
+  font-family: var(--fuente-titulos);
+  font-size: 16px;
+  border-radius: 8px;
+}
+
+.form__opcion-label--si{
+  color: red;
+  padding: 5px 15px;
+  border: 2px solid red;
+}
+
+.form__opcion-label--no{
+  color: green;
+  padding: 5px 10px;
+  border: 2px solid green;
+}
+
+.informacionfinal__texto{
+  font-family: var(--fuente-contenido);
+  font-size: 12px;
+  padding: 10px;
+  color: var(--color-placeholder);
+}
+
+.btn{
+  background-color: var(--color-secundario);
+  color: var(--color-terciario);
+  font-family: var(--fuente-titulos);
+  font-weight: bold;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 10px;
+  padding: 15px;
+  margin: 20px auto;
+  display: block;
+}
