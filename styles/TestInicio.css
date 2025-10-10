@@ -1,0 +1,133 @@
+.container__titulo{
+  font-family: var(--fuente-titulos);
+  font-weight: bold;
+  text-transform: uppercase;
+  color: var(--color-texto);
+  font-size: 18px;
+  margin-top: var(--margin-seccion);
+  text-align: center;
+}
+
+.instruciones{
+  background-color: var(--color-primario);
+  padding: 12px 5px;
+  border-radius: 10px;
+  font-family: var(--fuente-titulos);
+  color: var(--color-terciario);
+  text-align: center;
+  margin-top: var(--margin-seccion);
+  font-size: 16px;
+}
+
+.indices{
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: var(--margin-seccion) 0;
+}
+
+.indices__item{
+  text-decoration: none;
+  background-color: var(--color-indice);
+  padding: 8px 10px;
+  border-radius: 50%;
+  color: var(--color-texto);
+  font-family: var(--fuente-titulos);
+  font-weight: bold;
+  filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.356));
+}
+
+.indices__item:first-child{
+  background-color: var(--color-secundario);
+  color: var(--color-terciario);
+}
+
+.form{
+  margin-top: var(--margin-seccion);
+}
+
+.form__item{
+  border: 1px solid var(--color-placeholder);
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: var(--margin-seccion);
+}
+
+.form__pregunta{
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.form__pregunta__numero{
+  font-family: var(--fuente-titulos);
+  background-color: var(--color-primario);
+  border-radius: 50%;
+  padding: 8px;
+  font-weight: bold;
+  color: var(--color-terciario);
+  text-align: center;
+  font-size: 14px;
+}
+
+.form__pregunta__texto{
+  font-family: var(--fuente-contenido);
+  font-size: 14px;
+}
+
+.form__opciones{
+  display: flex;
+  flex-direction: row;
+  gap : 10px;
+  justify-content: center;
+}
+
+/* Ocultar el input real */
+.form__opcion-input {
+  display: none;
+}
+
+/* Estilo base del botón */
+.form__opcion-label {
+  display: inline-block;
+  padding: 10px 25px;
+  border: 2px solid #ff6600;  /* borde naranja */
+  border-radius: 8px;
+  color: var(--color-texto);
+  background-color: transparent;
+  cursor: pointer;
+  margin: 5px;
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+
+/* Hover (pasa el mouse) */
+.form__opcion-label:hover {
+  background-color: #ffe6cc;
+}
+
+/* Cuando el radio está seleccionado → mantener el color */
+.form__opcion-input:checked + .form__opcion-label--si {
+  background-color: #FF0000;
+  color: white;
+  border: #ff0000 1px solid;
+}
+
+.form__opcion-input:checked + .form__opcion-label--no {
+  background-color: #36BD36;
+  color: white;
+  border: #36BD36 1px solid;
+}
+
+.btn{
+  background-color: var(--color-secundario);
+  color: var(--color-terciario);
+  font-family: var(--fuente-titulos);
+  font-weight: bold;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 10px;
+  padding: 15px;
+  margin: 20px auto;
+  display: block;
+}
