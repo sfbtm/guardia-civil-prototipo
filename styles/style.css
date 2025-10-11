@@ -17,7 +17,7 @@
   --color-placeholder: rgba(43, 42, 41, 70%);
   --fuente-titulos: 'Roboto';
   --fuente-contenido: 'Open Sans';
-  --margin-seccion: 15px;
+  --margin-seccion: 20px;
 }
 
 body{
@@ -46,7 +46,7 @@ header{
 .logo__titulo{
   font-family: var(--fuente-titulos);
   font-weight: bold;
-  font-size: 21px;
+  font-size: 22px;
 }
 
 .container{
@@ -54,4 +54,3 @@ header{
   margin: 0 auto;
   width: 95%;
 }
-

@@ -1,0 +1,6 @@
+@import url(TestInicio.css);
+
+.indices__item:first-child {
+  background-color: var(--color-secundario);
+  color: var(--color-terciario);
+}
