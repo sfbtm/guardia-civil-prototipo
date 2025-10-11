@@ -1,0 +1,12 @@
+@import url(TestInicio.css);
+
+.indices__item:nth-child(5) {
+    background-color: var(--color-secundario);
+    color: var(--color-terciario);
+}
+
+.botones {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
