@@ -1,8 +1,10 @@
-import { crearHeader } from "../../components/header/header";
+
+
 import "../../styles/style.css";
 
-export const seccionalIntro = (app: HTMLElement) => {
+export const seccionalIntro = () => {
     // crear items
+    const main = document.createElement("main");
     const img = document.createElement("div");
     const titulo = document.createElement("h1");
     const boton = document.createElement("button");
@@ -12,7 +14,14 @@ export const seccionalIntro = (app: HTMLElement) => {
     boton.textContent = "Continuar";
 
     // agregar clases
+    main.classList.add("main__seccional")
     img.classList.add("image");
     titulo.classList.add("titulo");
     boton.classList.add("boton");
+
+    // emparentar elementos
+    main.appendChild(img);
+    main.appendChild(titulo);
+    main.appendChild(boton);
+    return main
 };

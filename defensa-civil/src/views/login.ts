@@ -2,9 +2,7 @@ import "../styles/login.css"
 
 import { navigateTo } from "../router";
 
-import { crearHeader } from "../components/header/header";
-
-export const renderLogin = (app: HTMLElement) => {
+export const renderLogin = () => {
     const main = document.createElement("main");
     const loginContainer = document.createElement("div");
 
@@ -32,6 +30,7 @@ export const renderLogin = (app: HTMLElement) => {
 
     // Asignar clases
 
+    main.classList.add("main__login")
     loginContainer.classList.add("login-container");
     loginImg.classList.add("login-img");
     titulo.classList.add("titulo");
@@ -55,14 +54,13 @@ export const renderLogin = (app: HTMLElement) => {
 
     loginContainer.appendChild(loginBoton);
 
-    crearHeader(app);
-
     // Agregar loginContainer al DOM
     main.appendChild(loginContainer)
-    app.appendChild(main);
 
     // Agregar listener al boton para ir a otra pagina
-    loginBoton.addEventListener("click", (e) => {
+    loginBoton.addEventListener("click", () => {
         navigateTo("/seccional-intro")
     })
+
+    return main;
 }

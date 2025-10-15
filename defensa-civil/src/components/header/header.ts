@@ -1,7 +1,7 @@
 import "./header.css"
 
 
-export const crearHeader = (app: HTMLElement) => {
+export const crearHeader = () => {
 
     // crear elementos
     const header = document.createElement("header");
@@ -19,7 +19,7 @@ export const crearHeader = (app: HTMLElement) => {
     // emparentar objetos
     header.appendChild(logo);
     header.appendChild(titulo);
-    app.appendChild(header);
-
+    
+    return header
 }
 

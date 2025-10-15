@@ -1,6 +1,6 @@
 import { renderLogin } from "./views/login";
 import { seccionalIntro } from "./views/seccional/seccional-intro";
-
+import { crearHeader } from "./components/header/header";
 
 // Funcion encargada de procesar la navegacion, actualizando el historial del window y ejecutando la funcion para renderizar la vista
 // Param: MouseEvent
@@ -15,7 +15,7 @@ const navigate = (event: MouseEvent) => {
     handleLocation();
 }
 // Tipo de funcion que dibuja cada vista
-type RouteFunction = (main: HTMLElement) => void
+type RouteFunction = () => HTMLElement
 
 // Un objeto de rutas, con valores de las funciones RouteFunction
 const routes: Record<string, RouteFunction> = {
@@ -25,11 +25,18 @@ const routes: Record<string, RouteFunction> = {
 
 // Funcion encargada de dibujar cada vista
 const handleLocation = () => {
+    
     const path = window.location.pathname; // Obtener la ruta nueva
     const routeFn = routes[path] || routes["/login"]; // Obtener la funcion de la vista correspondiente
-    const main = document.getElementById("app")!; //Obtener el contenedor principal (app)
-    main.innerHTML = "";
-    routeFn(main);
+    const app = document.getElementById("app")!; //Obtener el contenedor principal (app)
+    // Validacion para dibujar el header
+    console.log(path)
+    
+    app.innerHTML = "";
+    if (path != "/login" && path != "/"){
+        app.appendChild(crearHeader())
+    }
+    app.appendChild(routeFn());
 }
 
 
