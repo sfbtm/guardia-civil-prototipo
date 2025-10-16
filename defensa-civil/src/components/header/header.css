@@ -1,6 +1,6 @@
 .header{
     width: 100vw;
-    height: 18vw;
+    height: var(--altura-header);
   display: flex;
   align-items: center;
   flex-direction: row;
@@ -9,7 +9,7 @@
   box-shadow: 1px 1px 10px rgb(184, 183, 183);
   top: 0;
   left: 0;
-  background-color: #fff
+  background-color: #fff;
 }
 
 .header__logo{

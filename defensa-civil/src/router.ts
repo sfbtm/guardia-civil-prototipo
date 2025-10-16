@@ -1,6 +1,7 @@
 import { renderLogin } from "./views/login";
 import { seccionalIntro } from "./views/seccional/seccional-intro";
 import { crearHeader } from "./components/header/header";
+import { seccionalForm } from "./views/seccional/seccional-form";
 
 // Funcion encargada de procesar la navegacion, actualizando el historial del window y ejecutando la funcion para renderizar la vista
 // Param: MouseEvent
@@ -21,6 +22,7 @@ type RouteFunction = () => HTMLElement
 const routes: Record<string, RouteFunction> = {
     "/login": renderLogin,
     "/seccional-intro": seccionalIntro,
+    "/seccional-form": seccionalForm,
 }
 
 // Funcion encargada de dibujar cada vista

@@ -1,0 +1,6 @@
+.titulo-contenedor{
+    color: #fff;
+    background-color: var(--color-primario);
+    padding: 0.8rem;
+    border-radius: 10px;
+}

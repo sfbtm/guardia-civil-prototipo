@@ -1,6 +1,7 @@
 
 
-import "../../styles/style.css";
+import { navigateTo } from "../../router";
+import "../../styles/seccional-intro.css";
 
 export const seccionalIntro = () => {
     // crear items
@@ -14,7 +15,7 @@ export const seccionalIntro = () => {
     boton.textContent = "Continuar";
 
     // agregar clases
-    main.classList.add("main__seccional")
+    main.classList.add("main__seccional-intro")
     img.classList.add("image");
     titulo.classList.add("titulo");
     boton.classList.add("boton");
@@ -23,5 +24,9 @@ export const seccionalIntro = () => {
     main.appendChild(img);
     main.appendChild(titulo);
     main.appendChild(boton);
+
+    boton.addEventListener("click", () => {
+        navigateTo("/seccional-form")
+    })
     return main
 };

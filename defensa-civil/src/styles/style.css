@@ -18,12 +18,38 @@
   --fuente-titulos: 'Roboto';
   --fuente-contenido: 'Open Sans';
   --margin-seccion: 20px;
+  --altura-header: 10.5vh;
+}
+
+#app{
+    background-color: var(--color-fondo);
+    min-height: 100vh;
+}
+
+h1,h2,h3{
+  font-family: var(--fuente-titulos);
+}
+
+p, input, label{
+  font-size: 0.9rem;
+  font-family: var(--fuente-contenido);
 }
 
 main{
   display: flex;
   flex-direction: column;
+  align-items: center;
   padding: 20px;
+
+}
+
+button{
+  background-color: var(--color-secundario);
+  color: #fff;
+  border-radius: 10px;
+  width: 8.5rem;
+  height: 2rem;
+  
 }
 
 /* breakpoints */
@@ -32,7 +58,6 @@ main{
   #app{
     display: flex;
     flex-direction: column;
-    justify-content: center;
     text-align: center;
   }
 }
