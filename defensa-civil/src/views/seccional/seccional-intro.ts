@@ -8,7 +8,7 @@ export const seccionalIntro = () => {
     const main = document.createElement("main");
     const img = document.createElement("div");
     const titulo = document.createElement("h1");
-    const boton = document.createElement("button");
+    const boton = document.createElement("button"); 
 
     // agregar propiedades
     titulo.textContent = "Bienvenido al Plan Familiar de Emergencia!";
