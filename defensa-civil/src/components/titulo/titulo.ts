@@ -1,6 +1,6 @@
 import "./titulo.css"
 
-export const crearTitulo = (titulo: string, subTitulo: string ) => {
+export const crearTitulo = (titulo: string, subTitulo: string) => {
     const tituloContainer = document.createElement("div")
     const tituloNodo = document.createElement("h3");
     const subTituloNodo = document.createElement("p");

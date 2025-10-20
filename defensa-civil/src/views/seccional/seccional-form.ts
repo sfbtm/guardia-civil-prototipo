@@ -1,5 +1,6 @@
 import "../../styles/seccional-form.css"
 import { crearTitulo } from "../../components/titulo/titulo";
+import { navigateTo } from "../../router";
 
 export const seccionalForm = () => {
     
@@ -25,9 +26,6 @@ export const seccionalForm = () => {
 
     main.appendChild(titulo);
     main.appendChild(form);
-
-    
-    
 
     // lista de valores para cada label de input
     const valores = ["SECCIONAL:","Familia Segura N°:","Nombre de la familia:","Dirección:","Barrio - comuna - localidad:","Telefono fijo:","Calidad de la vivienda (Arriendo/propietario):"]
@@ -71,5 +69,9 @@ export const seccionalForm = () => {
 
     main.appendChild(boton)
 
+    // Agregar event listener al boton
+    boton.addEventListener("click", e => {
+        navigateTo("seccional-geo")
+    })
     return main;
 }

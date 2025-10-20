@@ -1,0 +1,13 @@
+.main__seccional-geo{
+    gap: 1rem;
+}
+
+.seccional-geo__nota{
+    font-size: 0.8rem;
+}
+
+.seccional-geo__placeholder{
+    width: 20rem;
+    height: 20rem;
+    background-color: red;
+}
