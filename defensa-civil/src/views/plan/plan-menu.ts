@@ -1,4 +1,5 @@
 import { crearBotonOpcion } from "../../components/boton-opciones/opcion-btn"
+import { navigateTo } from "../../router";
 
 export const planMenu = () => {
 
@@ -6,7 +7,7 @@ export const planMenu = () => {
     const titulo = document.createElement("h3");
     const boton = document.createElement("button");
 
-// Titulo de la familia (se fetchea en una base de datos en un futuro)
+// TODO: Titulo de la familia (se fetchea en una base de datos en un futuro)
     titulo.textContent = "Familia [Ejemplo]"
     boton.textContent = "Ver PDF"
 
@@ -15,20 +16,26 @@ export const planMenu = () => {
     boton.classList.add("plan-menu__boton")
     main.append(titulo, boton);
 
-    // array que contiene nombres de iconos para meterlos a cada boton
-    const iconos = [
-        {icono: "user-plus", texto: "Integrantes"},
-        {icono: "paw", texto: "Mascotas o animales"},
-        {icono: "triangle-exclamation", texto: "Factores de Riesgo"},
-        {icono: "hand-holding-medical", texto: "Recursos Disponibles"},
-        {icono: "house", texto: "Grafico de la vivienda"},
-        {icono: "sheet-plastic", texto: "Plan de Accion"},
-        {icono: "mountain", texto: "Grafico del Entorno"},
+    // array que contiene iconos y texto correspondiente para meterlos a cada boton
+    const contenidosBoton = [
+        {icono: "user-plus", texto: "Integrantes", ruta: "integrantes"},
+        {icono: "paw", texto: "Mascotas o animales", ruta: "mascotas"},
+        {icono: "triangle-exclamation", texto: "Factores de Riesgo", ruta: "factores-de-riesgo"},
+        {icono: "hand-holding-medical", texto: "Recursos Disponibles", ruta: "recursos-disponibles"},
+        {icono: "house", texto: "Grafico de la vivienda", ruta: "grafico-vivienda"},
+        {icono: "sheet-plastic", texto: "Plan de Accion", ruta: "plan-accion"},
+        {icono: "mountain", texto: "Grafico del Entorno", ruta: "grafico-entorno"},
     ]
 
-    iconos.forEach(objeto => {
-        const boton = crearBotonOpcion(objeto.icono,objeto.texto)
-        main.appendChild(boton);
+    // Bucle que crea un boton por cada 
+    contenidosBoton.forEach(contenido => {
+        const botonOpcion = crearBotonOpcion(contenido.icono,contenido.texto)
+        main.appendChild(botonOpcion);
+
+        // Añadir evento al boton
+        botonOpcion.addEventListener("click", () => {
+            navigateTo(contenido.ruta)
+        })
     })
 
 

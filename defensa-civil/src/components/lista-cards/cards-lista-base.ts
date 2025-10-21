@@ -1,0 +1,5 @@
+export const cardListaBase = () => {
+    const card = document.createElement("div");
+    card.classList.add("card-lista-base");
+    return card
+}

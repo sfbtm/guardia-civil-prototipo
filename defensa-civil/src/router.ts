@@ -4,6 +4,7 @@ import { crearHeader } from "./components/header/header";
 import { seccionalForm } from "./views/seccional/seccional-form";
 import { seccionalGeo } from "./views/seccional/seccional-geo";
 import { planMenu } from "./views/plan/plan-menu";
+import { integrantes } from "./views/plan/integrantes";
 
 // Funcion encargada de procesar la navegacion, actualizando el historial del window y ejecutando la funcion para renderizar la vista
 // Param: MouseEvent
@@ -27,6 +28,7 @@ const routes: Record<string, RouteFunction> = {
     "/seccional-form": seccionalForm,
     "/seccional-geo": seccionalGeo,
     "/plan-menu": planMenu,
+    "/integrantes": integrantes,
 }
 
 // Funcion encargada de dibujar cada vista
