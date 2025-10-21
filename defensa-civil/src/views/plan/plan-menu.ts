@@ -3,9 +3,17 @@ import { crearBotonOpcion } from "../../components/boton-opciones/opcion-btn"
 export const planMenu = () => {
 
     const main = document.createElement("main");
+    const titulo = document.createElement("h3");
+    const boton = document.createElement("button");
 
-    main.classList.add("main__plan-menu")
-    const boton = crearBotonOpcion("user-plus", "XD")
+// Titulo de la familia (se fetchea en una base de datos en un futuro)
+    titulo.textContent = "Familia [Ejemplo]"
+    boton.textContent = "Ver PDF"
+
+    main.classList.add("main__plan-menu");
+    titulo.classList.add("plan-menu__titulo");
+    boton.classList.add("plan-menu__boton")
+    main.append(titulo, boton);
 
     // array que contiene nombres de iconos para meterlos a cada boton
     const iconos = [
@@ -23,7 +31,6 @@ export const planMenu = () => {
         main.appendChild(boton);
     })
 
-    main.append(boton);
 
     return main
 }
