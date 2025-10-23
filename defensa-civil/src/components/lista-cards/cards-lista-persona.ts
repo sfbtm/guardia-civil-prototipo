@@ -23,13 +23,15 @@ export const cardPersona = (
     const medicamento = document.createElement("p");
     const sangre = document.createElement("p");
 
-    nombre.textContent = name;
-    info.textContent = `${rol}, ${age} años`;
-    numero.textContent = number;
+    // Uso de append para poder insertar iconos y texto con facilidad
+    nombre.append(insIcono(""))
+
+    // nombre.textContent = name;
+    // info.textContent = `${rol}, ${age} años`;
+    // numero.textContent = number;
 
     if (medicine){
         medicamento.append(insIcono("prescription-bottle-medical"),medicine)
-
     }
 
     sangre.textContent = blood;
