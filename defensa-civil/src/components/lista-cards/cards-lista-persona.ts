@@ -28,8 +28,7 @@ export const cardPersona = (
     numero.textContent = number;
 
     if (medicine){
-        medicamento.textContent = medicine;
-        medicamento.appendChild(insIcono("prescription-bottle-medical"))
+        medicamento.append(insIcono("prescription-bottle-medical"),medicine)
 
     }
 
