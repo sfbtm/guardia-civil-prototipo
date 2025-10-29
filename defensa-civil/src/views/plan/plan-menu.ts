@@ -13,6 +13,7 @@ export const planMenu = async() => {
     
     
     // fetchear la familia (Solo funciona como prueba, esto lo debe hacer la BD en parte)
+    // la arquitectura es ineficiente, pues no actualiza los datos de cada vista. Uso completamente estético. DEBE SER CAMBIADO TAN PRONTO SE PUEDA
     try {
         const familia = await fetchFamilia(1);
         titulo.textContent = `Familia ${familia.FamiliaNombre}`
