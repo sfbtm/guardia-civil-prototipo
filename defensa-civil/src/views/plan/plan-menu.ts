@@ -1,14 +1,26 @@
 import { crearBotonOpcion } from "../../components/boton-opciones/opcion-btn"
 import { navigateTo } from "../../router";
+import { fetchFamilia } from "../../services/get-familia";
 
-export const planMenu = () => {
 
+
+
+export const planMenu = async() => {
+    
     const main = document.createElement("main");
     const titulo = document.createElement("h3");
     const boton = document.createElement("button");
+    
+    
+    // fetchear la familia (Solo funciona como prueba, esto lo debe hacer la BD en parte)
+    try {
+        const familia = await fetchFamilia(1);
+        titulo.textContent = `Familia ${familia.FamiliaNombre}`
+    }
+    catch {
+        titulo.textContent = "Nombre no cargado"
+    }
 
-// TODO: Titulo de la familia (se fetchea en una base de datos en un futuro)
-    titulo.textContent = "Familia [Ejemplo]"
     boton.textContent = "Ver PDF"
 
     main.classList.add("main__plan-menu");

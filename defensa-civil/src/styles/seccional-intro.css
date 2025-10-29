@@ -1,5 +1,6 @@
 .main__seccional-intro{
     gap: 2rem;
+    justify-content: center;
 }
 
 .image{

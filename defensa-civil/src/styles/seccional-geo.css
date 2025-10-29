@@ -1,5 +1,6 @@
 .main__seccional-geo{
     gap: 1rem;
+    justify-content: center;
 }
 
 .seccional-geo__nota{

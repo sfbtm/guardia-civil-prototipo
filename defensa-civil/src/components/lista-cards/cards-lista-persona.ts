@@ -1,42 +1,64 @@
 import { cardListaBase } from "./cards-lista-base"
 import { insIcono } from "../../helpers/insertar-icono";
 
+import "./card-lista-personas.css"
+
 type Persona = {
     name: string, 
     rol: string,
-    age: number,
+    id: string,
     number: string,
-    medicine: string | false,
-    blood: string
+    birthday: string,
+    blood: string,
 }
 
+
 export const cardPersona = (
-    {name, rol, age, number, medicine, blood} : Persona 
+    {name, rol, id, number, birthday, blood} : Persona 
 
 ) => {
 
     const card = cardListaBase();
+    // agregar modificador BEM a la tarjeta
+    card.classList.add("card-lista-base--persona");
 
+    // Secciones de la tarjeta
+    const cardHeader = document.createElement("div");
+    const cardDetails = document.createElement("div");
+
+    // añadir clases a las secciones
+    cardHeader.classList.add("card-lista-base--persona__header");
+    cardDetails.classList.add("card-lista-base--persona__details");
+
+    // elementos de la tarjeta
     const nombre =  document.createElement("p");
+    const parentesco =  document.createElement("p");
     const info = document.createElement("p");
     const numero = document.createElement("p");
-    const medicamento = document.createElement("p");
+    const nacimiento = document.createElement("p");
     const sangre = document.createElement("p");
+    const sangreCaja = document.createElement("div")
 
-    // Uso de append para poder insertar iconos y texto con facilidad
-    nombre.append(insIcono(""))
+    // agregar clase para nombre y sangre
+    nombre.classList.add("card-lista-base__name")
+    sangreCaja.classList.add("card-lista-base--persona__blood-contenedor")
+    sangre.classList.add("card-lista-base--persona__blood")
 
-    // nombre.textContent = name;
-    // info.textContent = `${rol}, ${age} años`;
-    // numero.textContent = number;
+    sangreCaja.appendChild(sangre)
 
-    if (medicine){
-        medicamento.append(insIcono("prescription-bottle-medical"),medicine)
-    }
+    // meter los elementos en su seccion correspondiente
+    cardHeader.append(nombre,sangreCaja);
+    cardDetails.append(info,parentesco,numero,nacimiento);
 
-    sangre.textContent = blood;
+    // Informacion de cada elemento
+    nombre.append(name);
+    parentesco.append(insIcono("people-roof"),rol);
+    info.append(insIcono("id-card"), id);
+    numero.append(insIcono("phone"),number);
+    nacimiento.append(insIcono("cake-candles"),birthday),
+    sangre.append(blood);
 
-    card.append(nombre,info,numero,medicamento,sangre)
+    card.append(cardHeader,cardDetails)
 
     return card;
 }

@@ -1,0 +1,87 @@
+{
+    "FamiliaId": 1,
+    "FamiliaNombre": "Kennedy",
+  "Personas": [
+    {
+      "NombresApellidos": "Luz Marina Gómez Ruiz",
+      "TipoDocumento": "CC",
+      "NumeroDocumento": "52134879",
+      "Edad": 47,
+      "GrupoSanguineo": "O+",
+      "Parentesco": "Madre",
+      "EPS": "Nueva EPS",
+      "EnfermedadDiscapacidadOAlergia": "Hipertensión arterial",
+      "Medicinas": [
+        {
+          "Nombre": "Losartán",
+          "Dosis": "50mg cada 12 horas"
+        }
+      ],
+      "Celular": "3124567890"
+    }
+  ],
+
+  "Mascotas": [
+    {
+      "Especie": "Canino",
+      "Nombre": "Toby",
+      "Raza": "Criollo",
+      "Genero": "Macho",
+      "Edad": 4,
+      "Vacunas": [
+        "Rabia",
+        "Parvovirus",
+        "Moquillo"
+      ]
+    }
+  ],
+
+  "FactoresDeRiesgo": [
+    {
+      "Riesgo": "Deslizamiento de tierra",
+      "TipoDeRiesgo": "Natural",
+      "Ubicacion": "Vereda La Cuchilla, Municipio de Matanza, Santander",
+      "Vulnerabilidad": "La vivienda se encuentra en una ladera con escasa vegetación y drenaje deficiente",
+      "AccionesDeReduccionFamiliares": "Sembrar árboles y mantener limpia la zanja de drenaje",
+      "Responsable": "Luz Marina Gómez",
+      "Termino": "2025-12-31",
+      "Descripcion": "Zona con pendientes pronunciadas y lluvias constantes durante la temporada invernal"
+    }
+  ],
+
+  "RecursosDisponibles": [
+    {
+      "Recurso": "Puesto de salud rural",
+      "Ubicacion": "Centro poblado de Matanza, Santander",
+      "Distancia": "2.5 km",
+      "Servicios": "Atención primaria, vacunación, primeros auxilios",
+      "Telefono": "6076789012",
+      "Descripcion": "Atiende emergencias leves y derivaciones al hospital de Bucaramanga"
+    }
+  ],
+
+  "GraficoDeLaVivienda": {
+    "Plano": "img/plano_vivienda.png"
+  },
+
+  "PlanDeAccionFamiliar": {
+    "PlanDeAccionPor": "Inundación",
+    "Coordinador": "Carlos Andrés Gómez",
+    "Antes": {
+      "Responsable": "Luz Marina Gómez",
+      "AccionARealizar": "Mantener limpios los desagües y revisar techos antes de temporada de lluvias"
+    },
+    "Durante": {
+      "Responsable": "Carlos Andrés Gómez",
+      "AccionARealizar": "Desconectar energía eléctrica y mover objetos de valor a zonas altas"
+    },
+    "Despues": {
+      "Responsable": "María Fernanda Gómez",
+      "AccionARealizar": "Revisar daños estructurales y registrar pérdidas ante la Defensa Civil"
+    }
+  },
+
+  "GraficoDelEntorno": {
+    "Plano": "img/plano_entorno.png"
+  }
+}

@@ -8,7 +8,7 @@ import { integrantes } from "./views/plan/integrantes";
 
 // Funcion encargada de procesar la navegacion, actualizando el historial del window y ejecutando la funcion para renderizar la vista
 // Param: MouseEvent
-const navigate = (event: MouseEvent) => {
+const navigate = async(event: MouseEvent) => {
     event.preventDefault();
     // Se trata como un HTMLAnchorElement 
     const target = event.target as HTMLAnchorElement;
@@ -16,10 +16,10 @@ const navigate = (event: MouseEvent) => {
     // Se quita el comportamiento por defecto del elemento del evento
     event.preventDefault();
     window.history.pushState({},"",target.href);
-    handleLocation();
+    await handleLocation();
 }
 // Tipo de funcion que dibuja cada vista
-type RouteFunction = () => HTMLElement
+type RouteFunction = () => HTMLElement | Promise<HTMLElement>
 
 // Un objeto de rutas, con valores de las funciones RouteFunction
 const routes: Record<string, RouteFunction> = {
@@ -32,7 +32,7 @@ const routes: Record<string, RouteFunction> = {
 }
 
 // Funcion encargada de dibujar cada vista
-const handleLocation = () => {
+const handleLocation = async() => {
     
     const path = window.location.pathname; // Obtener la ruta nueva
     const routeFn = routes[path] || routes["/login"]; // Obtener la funcion de la vista correspondiente
@@ -44,14 +44,13 @@ const handleLocation = () => {
     if (path != "/login" && path != "/"){
         app.appendChild(crearHeader())
     }
-    app.appendChild(routeFn());
+    app.appendChild(await routeFn());
 }
 
 
 
 // Funcion para arrancar el enrutador. Usada en el main.ts
-export const initRouter = () => {
-    
+export const initRouter = async() => {
     window.onpopstate = handleLocation;
     
     document.addEventListener("click", (e) => {
@@ -62,7 +61,7 @@ export const initRouter = () => {
     
     })
     
-    handleLocation();
+    await handleLocation();
 }
 
 // Funcion para navegar a otra ruta, sin usar un <a>

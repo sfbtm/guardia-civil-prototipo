@@ -1,0 +1,40 @@
+.card-lista-base--persona{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.card-lista-base--persona__header{
+    display: flex;
+    justify-content: space-between;
+    /* background-color: red; */
+}
+
+.card-lista-base--persona__blood-contenedor{
+    background-color: var(--color-secundario);
+    color: #fff;
+    border-radius: 10px;
+    padding: 0.2rem;
+    width: 2rem;
+    height: 1.7rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.card-lista-base--persona__details{
+    /* background-color: blue; */
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 0.2rem 1rem;
+}
+
+.card-lista-base--persona__details p{
+    display: flex;
+    
+}
+

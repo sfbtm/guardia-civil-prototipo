@@ -2,12 +2,12 @@ import { cardPersona } from "../../components/lista-cards/cards-lista-persona";
 import { crearTitulo } from "../../components/titulo/titulo"
 
 const jose = {
-    name: "jose",
+    name: "Jose Diaz",
     rol: "papa",
-    age: 49,
+    id: "1234556",
     number: "000-000-000",
-    medicine: "pan",
-    blood: "a+"
+    birthday: "23/09/22",
+    blood: "A+"
 }
 
 export const integrantes = () => {

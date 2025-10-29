@@ -1,6 +1,8 @@
 import "../../styles/seccional-geo.css"
 
 import { crearTitulo } from "../../components/titulo/titulo"
+import { navigateTo } from "../../router";
+
 
 export const seccionalGeo = () => {
 
@@ -25,6 +27,11 @@ export const seccionalGeo = () => {
 
 //añadir todo a main
     main.append(titulo,nota,mapaPlaceholder,boton)
+
+    // Darle event listener al boton de continuar
+    boton.addEventListener("click", () => {
+        navigateTo("/plan-menu")
+    })
 
     return main;
 
