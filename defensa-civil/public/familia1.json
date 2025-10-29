@@ -6,7 +6,7 @@
       "NombresApellidos": "Luz Marina Gómez Ruiz",
       "TipoDocumento": "CC",
       "NumeroDocumento": "52134879",
-      "Edad": 47,
+      "FechaNacimiento": "10/10/2000",
       "GrupoSanguineo": "O+",
       "Parentesco": "Madre",
       "EPS": "Nueva EPS",
@@ -17,8 +17,21 @@
           "Dosis": "50mg cada 12 horas"
         }
       ],
-      "Celular": "3124567890"
-    }
+      "Celular": ""
+    },
+    {
+      "NombresApellidos": "Carlos Andrés Gómez López",
+      "TipoDocumento": "CC",
+      "NumeroDocumento": "1002456789",
+      "FechaNacimiento": "25/06/1998",
+      "GrupoSanguineo": "A+",
+      "Parentesco": "Padre",
+      "EPS": "Sanitas EPS",
+      "EnfermedadDiscapacidadOAlergia": "Ninguna",
+      "Medicinas": [],
+      "Celular": "3206547891"
+  }
+
   ],
 
   "Mascotas": [

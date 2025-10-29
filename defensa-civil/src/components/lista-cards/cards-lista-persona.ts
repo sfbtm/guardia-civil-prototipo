@@ -3,7 +3,7 @@ import { insIcono } from "../../helpers/insertar-icono";
 
 import "./card-lista-personas.css"
 
-type Persona = {
+type PersonaCard = {
     name: string, 
     rol: string,
     id: string,
@@ -13,10 +13,14 @@ type Persona = {
 }
 
 
-export const cardPersona = (
-    {name, rol, id, number, birthday, blood} : Persona 
+export const cardPersona = ( persona : PersonaCard ) => {
 
-) => {
+    // Si falta un dato en la tarjeta, acá se marca como "N/A" en vez de aparecer un espacio vacío
+    (Object.keys(persona) as (keyof PersonaCard)[]).forEach(clave => {
+        if (persona[clave] == ""){
+            persona[clave] = "N/A"
+        }
+    })
 
     const card = cardListaBase();
     // agregar modificador BEM a la tarjeta
@@ -31,7 +35,7 @@ export const cardPersona = (
     cardDetails.classList.add("card-lista-base--persona__details");
 
     // elementos de la tarjeta
-    const nombre =  document.createElement("p");
+    const nombre =  document.createElement("a");
     const parentesco =  document.createElement("p");
     const info = document.createElement("p");
     const numero = document.createElement("p");
@@ -51,12 +55,15 @@ export const cardPersona = (
     cardDetails.append(info,parentesco,numero,nacimiento);
 
     // Informacion de cada elemento
-    nombre.append(name);
-    parentesco.append(insIcono("people-roof"),rol);
-    info.append(insIcono("id-card"), id);
-    numero.append(insIcono("phone"),number);
-    nacimiento.append(insIcono("cake-candles"),birthday),
-    sangre.append(blood);
+    nombre.append(persona.name);
+    nombre.href = `/integrantes/${persona.id}`
+    nombre.dataset.link = ""
+
+    parentesco.append(insIcono("people-roof"),persona.rol);
+    info.append(insIcono("id-card"), persona.id);
+    numero.append(insIcono("phone"),persona.number);
+    nacimiento.append(insIcono("cake-candles"),persona.birthday),
+    sangre.append(persona.blood);
 
     card.append(cardHeader,cardDetails)
 
