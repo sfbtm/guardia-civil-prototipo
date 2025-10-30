@@ -7,8 +7,15 @@
     gap: 1.5rem;
     height: 4rem;
     width: 90%;
+
+    border-radius: 10px;
 }
     
 .opcion-btn__texto{
-    font-size: 1.5rem;
+    font-size: 1.3rem;
+    font-family: var(--fuente-contenido);
+    font-weight: 600;
+    color: #fff;
+
+    text-decoration: none;
 }

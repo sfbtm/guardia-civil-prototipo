@@ -1,6 +1,5 @@
 import "../../styles/seccional-form.css"
 import { crearTitulo } from "../../components/titulo/titulo";
-import { navigateTo } from "../../router";
 
 export const seccionalForm = () => {
     
@@ -8,10 +7,12 @@ export const seccionalForm = () => {
 
     const form = document.createElement("form");
 
-    const boton = document.createElement("button");
+    const boton = document.createElement("a");
 
     // dar contenido de texto al boton
     boton.textContent = "Continuar";
+    boton.href = "/seccional/geolocalizacion"
+    boton.dataset.link = "";
 
     // asignar clases
     main.classList.add("main__seccional-form");
@@ -69,9 +70,6 @@ export const seccionalForm = () => {
 
     main.appendChild(boton)
 
-    // Agregar event listener al boton
-    boton.addEventListener("click", e => {
-        navigateTo("seccional-geo")
-    })
+
     return main;
 }

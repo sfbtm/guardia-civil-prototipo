@@ -19,24 +19,60 @@ const navigate = async(event: MouseEvent) => {
     await handleLocation();
 }
 // Tipo de funcion que dibuja cada vista
-type RouteFunction = () => HTMLElement | Promise<HTMLElement>
+type RouteFunction = ( param?: Record<string, string> ) => HTMLElement | Promise<HTMLElement>
 
-// Un objeto de rutas, con valores de las funciones RouteFunction
-const routes: Record<string, RouteFunction> = {
-    "/login": renderLogin,
-    "/seccional-intro": seccionalIntro,
-    "/seccional-form": seccionalForm,
-    "/seccional-geo": seccionalGeo,
-    "/plan-menu": planMenu,
-    "/integrantes": integrantes,
+// Objeto ruta, contiene la ruta en expresion regular, la funcion de la vista y el nombre de la ruta
+type Route = {
+    path: RegExp;
+    view: RouteFunction;
+    name: string;
 }
+
+const routes: Route[] = [
+    { path: /^\/login$/, view: renderLogin, name: "login" },
+    { path: /^\/seccional\/intro$/, view: seccionalIntro, name: "seccional-intro" },
+    { path: /^\/seccional\/form$/, view:seccionalForm, name: "seccional-form" },
+    { path: /^\/seccional\/geolocalizacion$/, view:seccionalGeo, name: "seccional-geo" },
+    { path: /^\/plan-familiar-emergencia\/menu$/, view: planMenu, name: "plan-menu" },
+    { path: /^\/plan-familiar-emergencia\/integrantes$/, view: integrantes, name: "plan-menu" },
+]
+
+// // Un objeto de rutas, con valores de las funciones RouteFunction
+// const routes: Record<string, RouteFunction> = {
+//     "/login": renderLogin,
+//     "/seccional-intro": seccionalIntro,
+//     "/seccional-form": seccionalForm,
+//     "/seccional-geo": seccionalGeo,
+//     "/plan-menu": planMenu,
+//     "/integrantes": integrantes,
+// }
 
 // Funcion encargada de dibujar cada vista
 const handleLocation = async() => {
     
     const path = window.location.pathname; // Obtener la ruta nueva
-    const routeFn = routes[path] || routes["/login"]; // Obtener la funcion de la vista correspondiente
     const app = document.getElementById("app")!; //Obtener el contenedor principal (app)
+    
+    let routeMatch: RegExpExecArray | null = null;
+    let selectedRoute: Route | undefined;
+
+    // bucle que buscará todas las coincidencias de rutas
+    for (const route of routes){
+        routeMatch = route.path.exec(path);
+        if (routeMatch){
+            selectedRoute = route;
+            break;
+        }
+    }
+
+    // usar la ruta seleccionada, o usar la ruta pasada si no hay coincidencias
+    const routeFn = selectedRoute?.view || routes[routes.length - 1].view;
+
+    // extraer los parametros dinamicos
+    const params = routeMatch?.groups || {};
+
+    console.log(path,"parametros: ", params)
+
     // Validacion para dibujar el header
     console.log(path)
     
@@ -62,10 +98,4 @@ export const initRouter = async() => {
     })
     
     await handleLocation();
-}
-
-// Funcion para navegar a otra ruta, sin usar un <a>
-export const navigateTo = (path: string) => {
-    window.history.pushState({},"",path);
-    handleLocation();
 }

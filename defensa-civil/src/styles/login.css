@@ -94,6 +94,8 @@
     border-radius: 10px;
     width: 7rem;
     transition: 0.5s;
+
+    text-decoration: none;
 }
 
 .btn-login:hover{

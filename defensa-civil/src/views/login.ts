@@ -1,7 +1,5 @@
 import "../styles/login.css"
 
-import { navigateTo } from "../router";
-
 export const renderLogin = () => {
     const main = document.createElement("main");
     const loginContainer = document.createElement("div");
@@ -13,7 +11,7 @@ export const renderLogin = () => {
 
     const inputNombre = document.createElement("input");
     const inputContrasena = document.createElement("input");
-    const loginBoton = document.createElement("button");
+    const loginBoton = document.createElement("a");
 
     const recuperarContrasena = document.createElement("a");
 
@@ -24,7 +22,10 @@ export const renderLogin = () => {
     
     inputNombre.placeholder = "Correo electrónico";
     inputContrasena.placeholder = "Contraseña";
+
     loginBoton.textContent = "Ingresar";
+    loginBoton.href = "/seccional/intro";
+    loginBoton.dataset.link = ""
 
     recuperarContrasena.textContent = "¿Olvidaste tu contraseña?";
 
@@ -56,11 +57,6 @@ export const renderLogin = () => {
 
     // Agregar loginContainer al DOM
     main.appendChild(loginContainer)
-
-    // Agregar listener al boton para ir a otra pagina
-    loginBoton.addEventListener("click", () => {
-        navigateTo("/seccional-intro")
-    })
 
     return main;
 }

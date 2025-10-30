@@ -1,7 +1,6 @@
 import "../../styles/seccional-geo.css"
 
-import { crearTitulo } from "../../components/titulo/titulo"
-import { navigateTo } from "../../router";
+import { crearTitulo } from "../../components/titulo/titulo";
 
 
 export const seccionalGeo = () => {
@@ -10,7 +9,7 @@ export const seccionalGeo = () => {
     const titulo = crearTitulo("Geolocalizacion","Ubique en el mapa la ubicacion del hogar de la familia");
     const main = document.createElement("main");
     const nota = document.createElement("p");
-    const boton = document.createElement("button");
+    const boton = document.createElement("a");
 
     //Placeholder donde debe ir un mapa mientras se decide que tecnologia usar (Google maps, earth, alternativas gratis)
     const mapaPlaceholder = document.createElement("div");
@@ -23,15 +22,13 @@ export const seccionalGeo = () => {
 
 // dar contenido a la nota y boton
     nota.textContent = "*Indique en el lugar en donde se encuentra la familia y el sistema le indicara las coordenadas exactas";
+
     boton.textContent = ("Continuar")
+    boton.href = "/plan-familiar-emergencia/menu"
+    boton.dataset.link = "";
 
 //añadir todo a main
     main.append(titulo,nota,mapaPlaceholder,boton)
-
-    // Darle event listener al boton de continuar
-    boton.addEventListener("click", () => {
-        navigateTo("/plan-menu")
-    })
 
     return main;
 

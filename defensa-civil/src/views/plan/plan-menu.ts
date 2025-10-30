@@ -1,5 +1,4 @@
-import { crearBotonOpcion } from "../../components/boton-opciones/opcion-btn"
-import { navigateTo } from "../../router";
+import { crearBotonOpcion } from "../../components/boton-opciones/opcion-btn";
 import { fetchFamilia } from "../../services/get-familia";
 
 
@@ -42,13 +41,8 @@ export const planMenu = async() => {
 
     // Bucle que crea un boton por cada 
     contenidosBoton.forEach(contenido => {
-        const botonOpcion = crearBotonOpcion(contenido.icono,contenido.texto)
+        const botonOpcion = crearBotonOpcion(contenido.icono,contenido.texto, `/plan-familiar-emergencia/${contenido.ruta}`)
         main.appendChild(botonOpcion);
-
-        // Añadir evento al boton
-        botonOpcion.addEventListener("click", () => {
-            navigateTo(contenido.ruta)
-        })
     })
 
 

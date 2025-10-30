@@ -1,19 +1,22 @@
 import "./opcion-btn.css"
 
 
-export const crearBotonOpcion = ( icono: string, texto: string ) => {
+export const crearBotonOpcion = ( icono: string, texto: string, ruta: string ) => {
 
     // Importar contenidos del boton
-    const boton = document.createElement("button");
+    const boton = document.createElement("div");
     const img = document.createElement("i"); 
-    const contenido = document.createElement("p");
+    const link = document.createElement("a");
 
-    contenido.textContent = texto;
-    boton.append(img,contenido);
+    link.textContent = texto;
+    link.href = ruta;
+    link.dataset.link = ""
+
+    boton.append(img,link);
     img.classList = `fa-solid fa-${icono} opcion-btn__texto`;
     
     boton.classList.add("opcion-btn__button");
-    contenido.classList.add("opcion-btn__texto")
+    link.classList.add("opcion-btn__texto")
 
 
     return boton;
