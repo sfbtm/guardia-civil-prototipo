@@ -4,7 +4,8 @@ import { crearHeader } from "./components/header/header";
 import { seccionalForm } from "./views/seccional/seccional-form";
 import { seccionalGeo } from "./views/seccional/seccional-geo";
 import { planMenu } from "./views/plan/plan-menu";
-import { integrantes } from "./views/plan/integrantes";
+import { integrantes } from "./views/plan/integrantes/integrantes";
+import { integrantePage } from "./views/plan/integrantes/integrante-page";
 
 // Funcion encargada de procesar la navegacion, actualizando el historial del window y ejecutando la funcion para renderizar la vista
 // Param: MouseEvent
@@ -19,7 +20,7 @@ const navigate = async(event: MouseEvent) => {
     await handleLocation();
 }
 // Tipo de funcion que dibuja cada vista
-type RouteFunction = ( param?: Record<string, string> ) => HTMLElement | Promise<HTMLElement>
+type RouteFunction = ( param: Record<string, string> ) => HTMLElement | Promise<HTMLElement>
 
 // Objeto ruta, contiene la ruta en expresion regular, la funcion de la vista y el nombre de la ruta
 type Route = {
@@ -35,17 +36,8 @@ const routes: Route[] = [
     { path: /^\/seccional\/geolocalizacion$/, view:seccionalGeo, name: "seccional-geo" },
     { path: /^\/plan-familiar-emergencia\/menu$/, view: planMenu, name: "plan-menu" },
     { path: /^\/plan-familiar-emergencia\/integrantes$/, view: integrantes, name: "plan-menu" },
+    { path: /^\/plan-familiar-emergencia\/integrantes\/integrante\/(?<id>[a-zA-Z0-9]+)$/, view: (params) => integrantePage(params?.id), name: "integrante-page"}
 ]
-
-// // Un objeto de rutas, con valores de las funciones RouteFunction
-// const routes: Record<string, RouteFunction> = {
-//     "/login": renderLogin,
-//     "/seccional-intro": seccionalIntro,
-//     "/seccional-form": seccionalForm,
-//     "/seccional-geo": seccionalGeo,
-//     "/plan-menu": planMenu,
-//     "/integrantes": integrantes,
-// }
 
 // Funcion encargada de dibujar cada vista
 const handleLocation = async() => {
@@ -71,16 +63,17 @@ const handleLocation = async() => {
     // extraer los parametros dinamicos
     const params = routeMatch?.groups || {};
 
-    console.log(path,"parametros: ", params)
+    
 
     // Validacion para dibujar el header
     console.log(path)
     
     app.innerHTML = "";
     if (path != "/login" && path != "/"){
+        console.log("XD")
         app.appendChild(crearHeader())
     }
-    app.appendChild(await routeFn());
+    app.appendChild(await routeFn(params));
 }
 
 

@@ -1,3 +1,4 @@
+import { botonContinuar } from "../components/boton-continuar/boton-continuar";
 import "../styles/login.css"
 
 export const renderLogin = () => {
@@ -11,7 +12,7 @@ export const renderLogin = () => {
 
     const inputNombre = document.createElement("input");
     const inputContrasena = document.createElement("input");
-    const loginBoton = document.createElement("a");
+    const loginBoton = botonContinuar("/seccional/intro");
 
     const recuperarContrasena = document.createElement("a");
 
@@ -32,10 +33,11 @@ export const renderLogin = () => {
     // Asignar clases
 
     main.classList.add("main__login")
+
     loginContainer.classList.add("login-container");
     loginImg.classList.add("login-img");
-    titulo.classList.add("titulo");
     subtTitulo.classList.add("subtitulo");
+
     form.classList.add("form-login");
     inputNombre.classList.add("input-login");
     inputContrasena.classList.add("input-login");

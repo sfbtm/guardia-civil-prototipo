@@ -1,5 +1,6 @@
 import "../../styles/seccional-form.css"
 import { crearTitulo } from "../../components/titulo/titulo";
+import { botonContinuar } from "../../components/boton-continuar/boton-continuar";
 
 export const seccionalForm = () => {
     
@@ -7,17 +8,11 @@ export const seccionalForm = () => {
 
     const form = document.createElement("form");
 
-    const boton = document.createElement("a");
-
-    // dar contenido de texto al boton
-    boton.textContent = "Continuar";
-    boton.href = "/seccional/geolocalizacion"
-    boton.dataset.link = "";
+    const boton = botonContinuar( "/seccional/geolocalizacion" );
 
     // asignar clases
     main.classList.add("main__seccional-form");
     form.classList.add("form__seccional-form")
-    boton.classList.add("boton","boton--seccional")
 
     // agregar titulo
     const titulo = crearTitulo(

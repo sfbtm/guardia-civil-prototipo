@@ -3,8 +3,8 @@
     display: flex;
     align-items: center;
     justify-content: start;
-    padding: 1rem 2rem;
-    gap: 1.5rem;
+    padding: 1rem 1.5rem;
+    gap: 1rem;
     height: 4rem;
     width: 90%;
 
@@ -12,10 +12,11 @@
 }
     
 .opcion-btn__texto{
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-family: var(--fuente-contenido);
     font-weight: 600;
     color: #fff;
 
     text-decoration: none;
+    text-align: left;
 }

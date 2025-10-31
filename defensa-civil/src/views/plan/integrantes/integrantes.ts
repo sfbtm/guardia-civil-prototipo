@@ -1,11 +1,11 @@
-import { cardContainer } from "../../components/cardContainer/cardContainer";
-import { cardPersona } from "../../components/lista-cards/cards-lista-persona";
-import { crearTitulo } from "../../components/titulo/titulo"
-import { fetchFamilia } from "../../services/get-familia";
+import { cardContainer } from "../../../components/cardContainer/cardContainer";
+import { cardPersona } from "../../../components/lista-cards/cards-lista-persona";
+import { crearTitulo } from "../../../components/titulo/titulo"
+import { fetchFamilia } from "../../../services/get-familia";
 
-import type { Persona } from "../../services/get-familia";
+import type { Persona } from "../../../services/get-familia";
 
-import "../../styles/integrantes.css"
+import "../../../styles/integrantes.css"
 
 
 export const integrantes = async() => {
