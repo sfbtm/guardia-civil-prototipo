@@ -14,25 +14,26 @@
     background-color: var(--color-secundario);
     color: #fff;
     border-radius: 10px;
-    padding: 0.2rem;
+    padding: 5px;
     width: 2rem;
-    height: 1.7rem;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
-    font-weight: 600;
+    font-weight: bold;
     font-size: 1.2rem;
 }
 
 .card-lista-base--persona__details{
-    /* background-color: blue; */
     display: grid;
     grid-template-columns: repeat(2,1fr);
-    gap: 0.2rem 1rem;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 10px;
+    gap: 10px;
 }
 
+.card-lista-base--persona__details i{
+    margin-right: 10px;
+}
 .card-lista-base--persona__details p{
     display: flex;
     

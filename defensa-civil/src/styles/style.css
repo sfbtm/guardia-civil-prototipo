@@ -28,10 +28,10 @@ html{
   --margin-seccion: 20px;
   
   /* Tamaños de fuentes */
-  --fuente-grande: 2rem;
-  --fuente-normal: 1rem;
-  --fuente-pequena: 0.8rem;
-
+  --fuente-grande: 20px;
+  --fuente-normal: 15px;
+  --fuente-pequena: 14px;
+  --fuente-botones: 16px;
   /* header */
   --altura-header: 10.5vh;
 
@@ -58,7 +58,7 @@ main{
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px;
+  padding: 10px;
   /* justify-content: center; */
   width: 100%;
   min-height: calc(100vh - var(--altura-header))
@@ -68,10 +68,9 @@ button{
   background-color: var(--color-secundario);
   color: #fff;
   border-radius: 10px;
-  width: 8.5rem;
-  height: 2rem;
-  font-weight: 600
-  
+  padding: 10px 15px;
+  font-size: 16px;
+  font-weight: bold;
 }
 
 /* breakpoints */

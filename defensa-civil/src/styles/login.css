@@ -35,8 +35,8 @@
     align-items: center;
     justify-content: center;
     gap: 2rem;
-    height: 40rem;
-    width: 20rem;
+    height: 85vh;
+    width: 95%;
     background-color: #ffff;
     border-radius: 20px;
 }

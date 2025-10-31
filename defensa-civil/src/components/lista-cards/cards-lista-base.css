@@ -1,19 +1,18 @@
 .card-lista-base{
     width: 95%;
-    height: 6.5rem;
-
+    height: 150px;
     border-radius: 20px;
     box-shadow: 0 0 5px #00000059;
     padding: 0.7rem 1rem; 
-
     color: var(--color-texto)
 }
 
 .card-lista-base__name{
     font-family: var(--fuente-contenido);
     font-weight: 600;
-    font-size: var(--fuente-contenido);
+    font-size: var(--fuente-titulo);
     color: var(--color-texto);
     text-decoration: none;
+    margin-top: 10px;
 }
 

@@ -4,10 +4,13 @@
 }
 
 .image{
-    width: 200px;
-    height: 200px;
+    width: 350px;
+    height: 350px;
     background-color: red;
     border-radius: 10px;
+    background: url(/src/assets/introduccion.png);
+    background-size: cover;
+    background-position: center;
 }
 
 .seccional-intro__boton{
@@ -17,6 +20,5 @@
     font-family: var(--fuente-contenido);
     padding: 1rem;
     border-radius: 10px
-
     /* width: 2rem; */
 }

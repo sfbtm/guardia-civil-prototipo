@@ -1,16 +1,19 @@
 import { crearBotonOpcion } from "../../components/boton-opciones/opcion-btn";
 import { fetchFamilia } from "../../services/get-familia";
+import "../../styles/plan-menu.css"
 
 
 
 
 export const planMenu = async() => {
     
+    const contenedor = document.createElement("div");
+    const grid_contenedor = document.createElement("div");
     const main = document.createElement("main");
     const titulo = document.createElement("h3");
     const boton = document.createElement("button");
-    
-    
+
+    contenedor.append(titulo, boton);
     // fetchear la familia (Solo funciona como prueba, esto lo debe hacer la BD en parte)
     // la arquitectura es ineficiente, pues no actualiza los datos de cada vista. Uso completamente estético. DEBE SER CAMBIADO TAN PRONTO SE PUEDA
     try {
@@ -26,7 +29,9 @@ export const planMenu = async() => {
     main.classList.add("main__plan-menu");
     titulo.classList.add("plan-menu__titulo");
     boton.classList.add("plan-menu__boton")
-    main.append(titulo, boton);
+    main.append(contenedor, grid_contenedor);
+    contenedor.classList.add("plan-menu-header");
+    grid_contenedor.classList.add("plan-menu-grid-contenedor");
 
     // array que contiene iconos y texto correspondiente para meterlos a cada boton
     const contenidosBoton = [
@@ -42,7 +47,7 @@ export const planMenu = async() => {
     // Bucle que crea un boton por cada 
     contenidosBoton.forEach(contenido => {
         const botonOpcion = crearBotonOpcion(contenido.icono,contenido.texto, `/plan-familiar-emergencia/${contenido.ruta}`)
-        main.appendChild(botonOpcion);
+        grid_contenedor.appendChild(botonOpcion);
     })
 
 
